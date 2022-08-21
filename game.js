@@ -51,15 +51,15 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
   userClickedPattern = [];
   level++;
-  if (level === 10) {
+  if (level === 5) {
     $("body").addClass("newPoint10");
     playWinning();
   }
-  if (level === 20) {
+  if (level === 10) {
     $("body").addClass("newPoint20");
     playWinning();
   }
-  if (level === 10 || level === 20) {
+  if (level === 5 || level === 10) {
     $("#level-title").text("Welcome to checkpoint Level " + level + "!");
   }
   else {
@@ -71,7 +71,7 @@ function nextSequence() {
   gamePattern.push(randomChosenColour);
 
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-  if (level === 10 || level === 20) {
+  if (level === 5 || level === 10) {
     setTimeout(function () {
       playSound(randomChosenColour);
     }, 5000);
